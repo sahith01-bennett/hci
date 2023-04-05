@@ -1,0 +1,24 @@
+{% extends 'base_ai.html' %} {% block content %}
+
+<h3>
+    Please enter your query
+</h3>
+
+<form method="POST">
+    {% csrf_token %}
+    <input type="text" class="form-control" name="user_input">
+
+
+    <button type="submit" class="btn btn-primary mt-3">Submit</button>
+</form>
+<div>
+    <h4>
+        Response from ChatBot
+    </h4>
+    {% if response %}
+    <div>
+        {{response}}
+    </div>
+    {% endif %}
+</div>
+{% endblock content %}
